@@ -1,0 +1,13 @@
+<nav>
+	<div class="content-wrapper">
+		<ul class="left-nav">
+			<li><img src="img/logo.png"></li>
+		</ul>
+		<ul class="right-nav">
+			<li><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
+			<b>{{ cart.getTotalCount() }} items</b>
+			<b>{{ cart.getTotalPrice()| currency }}</b>
+		</ul>
+	</div>
+
+</nav>
