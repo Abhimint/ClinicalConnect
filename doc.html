@@ -21,32 +21,26 @@
     <![endif]-->
   </head>
   <body>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+
     <div align="center">
-      <div class="userID">
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">User ID</span>
-          <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
-        </div>
-      </div>
+      <div class="form">
+        <form class="form-signin">
+          <h2 class="form-signin-heading">Hello Doctor, welcome!</h2>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
 
+          <a class="btn btn-primary" href="patList.html" role="button">Doctor Login</a>
 
-    <br></br>
-    <br></br>
-
-    
-      <div class="password">
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Password</span>
-          <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
-        </div>
+        </form>
       </div>
     </div>
-
-
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

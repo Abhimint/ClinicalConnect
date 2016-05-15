@@ -1,3 +1,15 @@
-.userID{
+.form{
+  padding-top: 200px;
+  width:25%;
+}
+
+.list{
+  padding-top: 50px;
   width:50%;
+}
+
+.table a
+{
+    display:block;
+    text-decoration:none;
 }
