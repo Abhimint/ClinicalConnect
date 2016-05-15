@@ -5,6 +5,15 @@
   background-attachment: fixed;
 }
 
+.home{
+  background-image: url(http://www.creazionifutura.it/wp-content/uploads/2013/07/sfondo-sala-operatoria.jpg);
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 200px;
+  padding-bottom:325px;
+}
+
 .form{
   padding-top: 200px;
   width:25%;
