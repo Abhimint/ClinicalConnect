@@ -1,11 +1,19 @@
+.body{
+  background-color: lightgrey;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .form{
   padding-top: 200px;
   width:25%;
+  padding-bottom:250px;
 }
 
 .list{
-  padding-top: 50px;
-  width:50%;
+  width:95%;
+  padding-bottom:250px;
 }
 
 .table a
