@@ -13,3 +13,12 @@
     display:block;
     text-decoration:none;
 }
+
+.circular {
+	width: 35px;
+	height: 35px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background, url("../img/chen.png") no-repeat;
+	}
