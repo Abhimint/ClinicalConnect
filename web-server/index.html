@@ -44,8 +44,9 @@
           var ohip=document.getElementById('ohipNum').value;
         	var appRedirectUri=document.getElementById('redirectUri').value;
         	//Build the request URL.  The base URL and next 4 items are typically always the same for Spark web apps
-        	var requestUrl = 'https://api.ciscospark.com/v1/rooms?' + //Spark OAuth2 base URL
+        	var requestUrl = 'https://api.ciscospark.com/v1/rooms';//Spark OAuth2 base URL
           xhttp = new XMLHttpRequest(); // Create an AJAX HTTP request object
+<<<<<<< HEAD:web-server/public/index.html
           xhttp.onreadystatechange = function() {  // Define a handler, which fires when the request completes
           if (xhttp.readyState == 4) { // If the request state = 4 (completed)...
             if (xhttp.status == 200) { // And the status = 200 (OK), then...
@@ -64,19 +65,40 @@
         xhttp.setRequestHeader('Content-Type', 'application/JSON'); // Sending the content as URL-encoded form data
         xhttp.setRequestHeader('Authoriztion', 'Bearer ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy')
         xhttp.send(body); // Execute the AJAX HTTP request
+=======
+
+xhttp.onreadystatechange = function() {  // Define a handler, which fires when the request completes
+  if (xhttp.readyState == 4) { // If the request state = 4 (completed)...
+    if (xhttp.status == 200) { // And the status = 200 (OK), then...
+      var authInfo = JSON.parse(xhttp.responseText); // Parse the JSON response into an object
+      document.getElementById('token').value = authInfo['access_token']; // Retrieve the access_token field, and display it
+    } else alert('Error requesting access token: ' + xhttp.statusText)
+  }
+}
+xhttp.open('POST', requestUrl, true); // Initialize the HTTP request object for POST to the access token URL
+// Build the HTML form request body
+var body = 'grant_type=authorization_code&'+  // This is an OAuth2 Authorization Code request
+  'redirect_uri='+encodeURIComponent(appRedirectUri)+'&'+ // Same custom app Redirect URI
+  'code='+encodeURIComponent(document.getElementById('code').value)+'&'+ // User auth code retrieved previously
+  'client_id='+encodeURIComponent(appClientId)+'&'+ // The custom app Client ID
+  'client_secret='+encodeURIComponent(appClientSecret); // The custom app Client Secret
+xhttp.setRequestHeader('Content-Type', 'application/JSON'); // Sending the content as URL-encoded form data
+xhttp.setRequestHeader('Authoriztion', 'Bearer ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy')
+xhttp.send(body); // Execute the AJAX HTTP request
+>>>>>>> 5589f525ff5270ea29e1f65687bb0e95c89322b6:web-server/index.html
         }
 
-        window.onload = function(e) {
-        	document.getElementById('redirectUri').value=window.location.href.split("?")[0]; // Detect the current page's base URL
-        	var params = parseQueryStr(window.location.search.substring(1)); // Parse the query string params into a dictionary
-        	if (params['ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy']) { // If the query param 'code' exists, then...
-        		document.getElementById('ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy').value = params['ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy']; // Display the auth code
-        		document.getElementById('tokenButton').removeAttribute('hidden'); // Reveal the 'Request Access Token' button
-        	}
-        	if (params['error']) { // If the query param 'error' exists, then something went wrong...
-        		alert('Error requesting auth code: ' + params['error'] + ' / ' + params['error_description']);
-        	}
-        }
+        // window.onload = function(e) {
+        // 	// document.getElementById('redirectUri').value=window.location.href.split("?")[0]; // Detect the current page's base URL
+        // 	// var params = parseQueryStr(window.location.search.substring(1)); // Parse the query string params into a dictionary
+        // 	// if (params['ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy']) { // If the query param 'code' exists, then...
+        // 	// 	document.getElementById('ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy').value = params['ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy']; // Display the auth code
+        // 	// // 	document.getElementById('tokenButton').removeAttribute('hidden'); // Reveal the 'Request Access Token' button
+        // 	// }
+        // 	// if (params['error']) { // If the query param 'error' exists, then something went wrong...
+        // 	// 	alert('Error requesting auth code: ' + params['error'] + ' / ' + params['error_description']);
+        // 	// }
+        // }
 
       </script>
 
@@ -91,7 +113,13 @@
         Temperature: <input type="text" name="doa"><br>
         Temperature: <input type="text" name="sex"><br>
         Temperature: <input type="text" name="bday"><br>
+<<<<<<< HEAD:web-server/public/index.html
         <input value="Submit" type="submit" onClick="Clicked()">
+=======
+        <input value="Submit" type="button" onClick="Clicked">
+
+
+>>>>>>> 5589f525ff5270ea29e1f65687bb0e95c89322b6:web-server/index.html
 
     </div> <!-- /container -->
 
