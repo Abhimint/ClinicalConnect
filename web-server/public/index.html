@@ -47,10 +47,55 @@
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <a href="">
+        <a href="./patient.html">
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </a>
       </form>
+
+      <script>
+        function Clicked(){
+          var appClientId=document.getElementById('clientId').value;
+        	var appRedirectUri=document.getElementById('redirectUri').value;
+        	//Build the request URL.  The base URL and next 4 items are typically always the same for Spark web apps
+        	var requestUrl = 'https://api.ciscospark.com/v1/authorize?' + //Spark OAuth2 base URL
+        		'response_type=code&' + // Requesting the OAuth2 'Authentication Code' flow
+        		'scope='+ encodeURIComponent('spark:rooms_read') + '&' + // Requested permission, i.e. Spark room info
+        		// The following items are provided by the developer in the source code/config or generated dynamically at run time
+        		'state=' + encodeURIComponent(randomString(63)) + '&' +	// Random string for OAuth2 nonce replay protection
+        		'client_id=' + encodeURIComponent(appClientId) + '&' + // The custom app Client ID
+        		'redirect_uri=' + encodeURIComponent(appRedirectUri); // The custom app's Redirect URI
+        	window.location = requestUrl; // Redirect the browser to the OAuth2 kickoff URL
+        }
+
+        window.onload = function(e) {
+        	document.getElementById('redirectUri').value=window.location.href.split("?")[0]; // Detect the current page's base URL
+        	var params = parseQueryStr(window.location.search.substring(1)); // Parse the query string params into a dictionary
+        	if (params['ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy']) { // If the query param 'code' exists, then...
+        		document.getElementById('ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy').value = params['ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy']; // Display the auth code
+        		document.getElementById('tokenButton').removeAttribute('hidden'); // Reveal the 'Request Access Token' button
+        	}
+        	if (params['error']) { // If the query param 'error' exists, then something went wrong...
+        		alert('Error requesting auth code: ' + params['error'] + ' / ' + params['error_description']);
+        	}
+        }
+
+      </script>
+
+      <form class="form-signin" action="https://api.ciscospark.com/v1/rooms" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+
+        Name: <input type="text" name="fname"><br>
+        Patient ID: <input type="text" name="patientID"><br>
+        Temperature: <input type="text" name="temp"><br>
+        OHIP #: <input type="text" name="ohipNum"><br>
+        Temperature: <input type="text" name="weight"><br>
+        Temperature: <input type="text" name="doa"><br>
+        Temperature: <input type="text" name="sex"><br>
+        Temperature: <input type="text" name="bday"><br>
+        <input type="submit" value="Submit" onClick="Clicked()">
+      </form>
+
 
     </div> <!-- /container -->
 
