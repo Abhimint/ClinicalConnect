@@ -1,0 +1,39 @@
+<section class="product-view" role="product-view">
+	<div class="content-wrapper">
+		<div class="row">
+			<!-- TODO #3: SHOW PRODUCTS -->
+			<div class="col-xs-12 col-sm-3" 
+				 ng-repeat="product in products">
+				<div id="product-card" class="product-card">
+					<div class="product-buy">
+						<div class="table-view">
+							<div class="table-cell">
+								<i class="fa fa-shopping-cart"></i>
+							</div>
+						</div>
+					</div>
+					<!-- SET PRODUCT IMAGE -->
+					<div class="product-img" style="background:url('{{product.thumb}}');background-size:cover;background-position:center center">
+					</div>
+
+					<div class="product-info">
+						<div class="product-name">
+							<!-- SET PRODUCT NAME -->
+							{{product.name}}
+							
+						</div>
+						<div class="product-brand">
+							<!-- SET PRODUCT Description -->
+							<em>{{product.description}}</em>
+						</div>
+						<div class="product-cost">
+							<!-- SET PRODUCT PRICE WITH FILTER -->
+							{{product.price | currency:'$':0}}
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<section>

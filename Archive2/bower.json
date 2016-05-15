@@ -1,0 +1,22 @@
+{
+  "name": "shopapp",
+  "description": "eCommerce shopping app built using AngularJs",
+  "main": "index.js",
+  "authors": [
+    "Saadat Qadri <saadat.qadri@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/BrainStationEducation/Winter2016-IntroToJS",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6"
+  }
+}

@@ -1,0 +1,90 @@
+[
+	{
+		"id": 0,
+		"name": "Portraiture Pendant",
+		"vendor": "Mimiko and Company",
+		"categories": ["accessories"],
+		"description": "A beautiful, elegant piece.",
+		"price": 85.00,
+		"onSale": false,
+		"thumb": "img/img-pendant.png",
+		"quantityInStock": 5
+	},
+	{
+		"id": 1,
+		"name": "Cufflinks",
+		"vendor": "Chromeo",
+		"categories": ["accessories"],
+		"description": "Rich heritage cufflinks, pure silver.",
+		"price": 200.00,
+		"onSale": false,
+		"thumb": "img/img-cufflinks.png",
+		"quantityInStock": 10
+	},
+	{
+		"id": 2,
+		"name": "Neilson Carginan",
+		"vendor": "Crux and Crucible",
+		"categories": ["outerwear"],
+		"description": "Rich heritage cufflinks, pure silver.",
+		"price": 200.00,
+		"onSale": false,
+		"thumb": "img/img-cardigan.png",
+		"quantityInStock": 10
+	},
+	{
+		"id": 3,
+		"name": "Tanner Jacket",
+		"vendor": "The Inventory",
+		"categories": ["outerwear"],
+		"description": "Beautiful tan leather, you will love this jacket in the winter.",
+		"price": 279.00,
+		"onSale": false,
+		"thumb": "img/img-jacket.png",
+		"quantityInStock": 10
+	},
+	{
+		"id": 4,
+		"name": "Anabelle Blouse",
+		"vendor": "Brand Melville",
+		"categories": ["shirts"],
+		"description": "The perfect dress for spring.",
+		"price": 279.00,
+		"onSale": false,
+		"thumb": "img/img-blouse.png",
+		"quantityInStock": 10
+	},
+	{
+		"id": 5,
+		"name": "Dark Denim Skinny",
+		"vendor": "Forrester",
+		"categories": ["pants"],
+		"description": "Everyone needs a pair of these.",
+		"price": 329.00,
+		"onSale": false,
+		"thumb": "img/img-duffle.png",
+		"quantityInStock": 10
+	},
+	{
+		"id": 6,
+		"name": "Beach Hat",
+		"vendor": "The Last Life",
+		"categories": ["accessories"],
+		"description": "Invaluable sun protection.",
+		"price": 145.00,
+		"onSale": false,
+		"thumb": "img/img-hat.png",
+		"quantityInStock": 10
+	},
+	{
+		"id": 7,
+		"name": "Leather Dress Shoes",
+		"vendor": "Ted Baker UK",
+		"categories": ["shoes"],
+		"description": "Comfort, redesigned.",
+		"price": 205.00,
+		"onSale": false,
+		"thumb": "img/img-romper.png",
+		"quantityInStock": 10
+	}
+]
