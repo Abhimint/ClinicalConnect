@@ -36,22 +36,6 @@
 
     <div class="container">
 
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <a href="./patient.html">
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </a>
-      </form>
-
       <script>
         function Clicked(){
           var patientName=document.getElementById('name').value;
@@ -62,24 +46,24 @@
         	//Build the request URL.  The base URL and next 4 items are typically always the same for Spark web apps
         	var requestUrl = 'https://api.ciscospark.com/v1/rooms?' + //Spark OAuth2 base URL
           xhttp = new XMLHttpRequest(); // Create an AJAX HTTP request object
-xhttp.onreadystatechange = function() {  // Define a handler, which fires when the request completes
-  if (xhttp.readyState == 4) { // If the request state = 4 (completed)...
-    if (xhttp.status == 200) { // And the status = 200 (OK), then...
-      var authInfo = JSON.parse(xhttp.responseText); // Parse the JSON response into an object
-      document.getElementById('token').value = authInfo['access_token']; // Retrieve the access_token field, and display it
-    } else alert('Error requesting access token: ' + xhttp.statusText)
-  }
-}
-xhttp.open('POST', requestUrl, true); // Initialize the HTTP request object for POST to the access token URL
-// Build the HTML form request body
-var body = 'grant_type=authorization_code&'+  // This is an OAuth2 Authorization Code request
-  'redirect_uri='+encodeURIComponent(appRedirectUri)+'&'+ // Same custom app Redirect URI
-  'code='+encodeURIComponent(document.getElementById('code').value)+'&'+ // User auth code retrieved previously
-  'client_id='+encodeURIComponent(appClientId)+'&'+ // The custom app Client ID
-  'client_secret='+encodeURIComponent(appClientSecret); // The custom app Client Secret
-xhttp.setRequestHeader('Content-Type', 'application/JSON'); // Sending the content as URL-encoded form data
-xhttp.setRequestHeader('Authoriztion', 'Bearer ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy')
-xhttp.send(body); // Execute the AJAX HTTP request
+          xhttp.onreadystatechange = function() {  // Define a handler, which fires when the request completes
+          if (xhttp.readyState == 4) { // If the request state = 4 (completed)...
+            if (xhttp.status == 200) { // And the status = 200 (OK), then...
+              var authInfo = JSON.parse(xhttp.responseText); // Parse the JSON response into an object
+              document.getElementById('token').value = authInfo['access_token']; // Retrieve the access_token field, and display it
+            } else alert('Error requesting access token: ' + xhttp.statusText)
+          }
+        }
+        xhttp.open('POST', requestUrl, true); // Initialize the HTTP request object for POST to the access token URL
+        // Build the HTML form request body
+        var body = 'grant_type=authorization_code&'+  // This is an OAuth2 Authorization Code request
+          'redirect_uri='+encodeURIComponent(appRedirectUri)+'&'+ // Same custom app Redirect URI
+          'code='+encodeURIComponent(document.getElementById('code').value)+'&'+ // User auth code retrieved previously
+          'client_id='+encodeURIComponent(appClientId)+'&'+ // The custom app Client ID
+          'client_secret='+encodeURIComponent(appClientSecret); // The custom app Client Secret
+        xhttp.setRequestHeader('Content-Type', 'application/JSON'); // Sending the content as URL-encoded form data
+        xhttp.setRequestHeader('Authoriztion', 'Bearer ZjkxNDk1OTQtM2M0Ny00M2M3LWI2ZDItNGM1YTRmNTYzNzI3ZDU3NDc5ZjYtZjUy')
+        xhttp.send(body); // Execute the AJAX HTTP request
         }
 
         window.onload = function(e) {
@@ -96,7 +80,6 @@ xhttp.send(body); // Execute the AJAX HTTP request
 
       </script>
 
-
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
 
@@ -108,12 +91,9 @@ xhttp.send(body); // Execute the AJAX HTTP request
         Temperature: <input type="text" name="doa"><br>
         Temperature: <input type="text" name="sex"><br>
         Temperature: <input type="text" name="bday"><br>
-        <input value="Submit" type="button" onClick="Clicked()">
-
-
+        <input value="Submit" type="submit" onClick="Clicked()">
 
     </div> <!-- /container -->
-
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
