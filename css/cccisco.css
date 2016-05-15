@@ -39,3 +39,9 @@
 	-moz-border-radius: 150px;
 	background, url("../img/chen.png") no-repeat;
 	}
+
+.page-header
+{
+  padding:0;
+
+}
