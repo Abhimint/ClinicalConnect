@@ -10,7 +10,7 @@
   background-repeat: repeat;
   background-position: center;
   background-attachment: fixed;
-  padding-top: 200px;
+  padding-top: 150px;
   padding-bottom:325px;
 }
 
@@ -43,5 +43,8 @@
 .page-header
 {
   padding:0;
+}
 
+.btn btn-default{
+  padding:0;
 }
